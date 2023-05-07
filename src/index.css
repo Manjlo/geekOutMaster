@@ -151,7 +151,6 @@ p {
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
-    text-justify:distribute-all-lines;
     font-family: 'Karma Future', sans-serif;
 }
 
