@@ -1,0 +1,23 @@
+{
+  "name": "miniproyecto1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "http-server ./src"
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manjlo/geekOutMaster.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manjlo/geekOutMaster/issues"
+  },
+  "homepage": "https://github.com/Manjlo/geekOutMaster#readme"
+}
