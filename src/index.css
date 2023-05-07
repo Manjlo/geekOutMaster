@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Karma Future';
+  src: url('assets/KarmaFuture.ttf');
+}
+.root .crapsScore {
+    font-family: 'Karma Future', sans-serif;
+}
+@font-face {
+    font-family: 'gameshow';
+    src: url('assets/Gameshow.ttf');
+}
+/*Secciones de juego*/
+.root {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    background-image: url("assets/activeCraps.jpg");
+}
+#root {
+    border-style:none;
+    border-radius: 15px;
+}
+.root .usedCraps {  
+    width: calc(53% - 10px);
+    background-image: url("assets/usedCraps.jpg");
+    background-size: cover;
+}
+#idUsedCraps {
+    border-width: 5px;
+    border-style: solid;
+    border-color: #081D6D;
+    border-radius: 15px;
+    margin: 20px;
+}
+.root .inactiveCraps {  
+    width: calc(40% - 10px);
+    background-image: url("assets/inactiveCraps.jpg");
+    background-size: cover;
+}
+#idInactiveCraps {
+    border-width: 5px;
+    border-style: solid;
+    border-color: #081D6D;
+    border-radius: 15px;
+    margin: 20px;
+}
+.root .activeCraps {  
+    width: calc(53% - 10px);
+    background-image: none;
+    background-size: cover;
+}
+#idActiveCraps {
+    margin: 20px;
+}
+.root .crapsScore {  
+    display: flex;
+    width: calc(40% - 10px);
+    background-image: url("assets/score.jpg");
+    background-size: cover;
+}
+#idCrapsScore {
+    border-width: 5px;
+    border-style: solid;
+    border-color: #081D6D;
+    border-radius: 15px;
+    margin: 20px;
+}
+/*Tablero de ronda*/
+.root .crapsScore .roundBoard {
+    height: 30%;
+    width: 30%;
+}
+#idRoundBoard {
+    position: relative;
+    background-color: #EEE5E3;
+    border-radius: 15px;
+    top: 69%;
+    left: 69%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+/*Taablero de puntaje*/
+.root .crapsScore .roundScore {
+    height: 30%;
+    width: 30%;
+}
+#idRoundScore {
+    position: relative;
+    background-color: #EEE5E3;
+    border-radius: 15px;
+    top: 69%;
+    right: 29%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+/*Boton de ronda*/
+.root .activeCraps .roundButton {
+    height: 12%;
+    width: 40%;
+}
+#idRoundButton {
+    position: relative;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-image: url("assets/inactiveCraps.jpg");
+    background-size: cover;
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #081D6D;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}

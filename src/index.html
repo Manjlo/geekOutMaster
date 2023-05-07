@@ -2,12 +2,25 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-
-  
     <script type="module" src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
     <title>Geek out master</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div class="root" id="root">
+      <div class = "usedCraps" id="idUsedCraps"></div>
+      <div class = "inactiveCraps" id="idInactiveCraps"></div>
+      <div class = "activeCraps" id="idActiveCraps">
+        <button class="roundButton" id="idRoundButton"></button>
+      </div>
+      <div class = "crapsScore" id="idCrapsScore">
+        <div class="roundBoard" id="idRoundBoard">
+          <label for="idRoundBoard">Round</label>
+        </div>
+        <div class="roundScore" id="idRoundScore">
+          <label for="idRoundScore">Score</label>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
