@@ -2,12 +2,21 @@
   font-family: 'Karma Future';
   src: url('assets/KarmaFuture.ttf');
 }
-.root .crapsScore {
-    font-family: 'Karma Future', sans-serif;
-}
 @font-face {
     font-family: 'gameshow';
     src: url('assets/Gameshow.ttf');
+}
+body {
+    font-family: 'gameshow', sans-serif;
+}
+p {
+    position: absolute;
+    font-family: 'gameshow', sans-serif;
+    color: white;
+    top: 49%;
+    left: 71%;
+    font-size: 45px;
+    z-index: 1;
 }
 /*Secciones de juego*/
 .root {
@@ -28,11 +37,16 @@
     background-size: cover;
 }
 #idUsedCraps {
+    position: relative;
     border-width: 5px;
     border-style: solid;
     border-color: #081D6D;
     border-radius: 15px;
     margin: 20px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
 }
 .root .inactiveCraps {  
     width: calc(40% - 10px);
@@ -40,11 +54,16 @@
     background-size: cover;
 }
 #idInactiveCraps {
+    position: relative;
     border-width: 5px;
     border-style: solid;
     border-color: #081D6D;
     border-radius: 15px;
     margin: 20px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
 }
 .root .activeCraps {  
     width: calc(53% - 10px);
@@ -52,7 +71,12 @@
     background-size: cover;
 }
 #idActiveCraps {
+    position: relative;
     margin: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
 }
 .root .crapsScore {  
     display: flex;
@@ -61,11 +85,16 @@
     background-size: cover;
 }
 #idCrapsScore {
+    position: relative;
     border-width: 5px;
     border-style: solid;
     border-color: #081D6D;
     border-radius: 15px;
     margin: 20px;
+    text-align: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
 }
 /*Tablero de ronda*/
 .root .crapsScore .roundBoard {
@@ -81,6 +110,8 @@
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    color: black;
+    font-family: 'Karma Future', sans-serif;
 }
 /*Taablero de puntaje*/
 .root .crapsScore .roundScore {
@@ -96,16 +127,18 @@
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    color: black;
+    font-family: 'Karma Future', sans-serif;
 }
 /*Boton de ronda*/
 .root .activeCraps .roundButton {
-    height: 12%;
+    height: 22%;
     width: 40%;
 }
 #idRoundButton {
     position: relative;
-    top: 85%;
-    left: 50%;
+    top: 76%;
+    left: 0%;
     transform: translateX(-50%);
     padding: 10px 20px;
     background-image: url("assets/inactiveCraps.jpg");
@@ -118,4 +151,7 @@
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
+    text-justify:distribute-all-lines;
+    font-family: 'Karma Future', sans-serif;
 }
+
