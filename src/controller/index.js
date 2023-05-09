@@ -43,11 +43,15 @@ function initGameController() {
     console.log(crap);
 
     // Agregar el contenido de la carta
-    const imageSrc = `./assets/avatar/${crap.currentSide.avatar}.jpg`;
+    const imageSrc = `./assets/avatar/${crap.currentSide.avatar}.png`;
     const imageElement = document.createElement('img');
     imageElement.src = imageSrc;
     imageElement.alt = crap.id;
-    crapElement.appendChild(imageElement);
+    const crapElementDiv = document.createElement('div');
+    crapElementDiv.classList.add('crapContainer');
+    crapElementDiv.appendChild(imageElement);
+    crapElement.appendChild(crapElementDiv);
+
 
     // Agregar el listener de click a el dado
     crapElement.addEventListener('click', () => {
@@ -71,7 +75,7 @@ function initGameController() {
     const inactiveCrapsElements = game.getState().activeRound.inactiveCraps.map((crap) => createCrap(crap, onCrapClick));
     inactiveCrapsElements.forEach(crapElement => inactiveCrapsContainer.appendChild(crapElement));
 
-    const useCrapsElements = game.getState().activeRound.useCraps.map((crap) => createCrap(crap, onCrapClick));
+    const useCrapsElements = game.getState().activeRound.usedCraps.map((crap) => createCrap(crap, onCrapClick));
     useCrapsElements.forEach(crapElement => useCrapsContainer.appendChild(crapElement));
     const puntajeCrap = game.getState().activeRound.puntajeCraps.maps((crap) => createCrap(crap, onCrapClick));
     puntajeCrap.forEach(crapElement => useCrapsContainer.appendChild(crapElement));
