@@ -4,28 +4,28 @@
 <head>
   <meta charset="UTF-8">
   <script type="module" src="index.js"></script>
+  <script type="module" src="view/modal.js"></script>
   <link rel="stylesheet" href="index.css">
   <title>Geek out master</title>
 </head>
 
 <body>
+  <div class="welcomeWindown" id="idWelcome">
+    <div class="windown-content">
+      <button class="roundButton" id="idRoundButton">Iniciar Ronda</button>
+    </div>
+  </div>
+  <label id="idActiveCrapsLabel">Dados Activos</label>
+  <label id="idUsedCrapsLabel">Dados Usados</label>
+  <label id="idInactiveCrapsLabel">Dados Inactivos</label>
+  <label id="idScoreCrapsLabel">Puntaje</label>
   <div class="root" id="root">
     <div class="container-section">
-      <div class="usedCraps" id="idUsedCraps">
-        <label for="idUsedCraps">Dados Usados</label>
-      </div>
-      <div class="inactiveCraps" id="idInactiveCraps">
-        <label for="idInactiveCraps">Dados Inactivos</label>
-      </div>
+      <div class="usedCraps" id="idUsedCraps"></div>
+      <div class="inactiveCraps" id="idInactiveCraps"></div>
     </div>
     <div class="container-section">
-      <div class="activeCraps" id="idActiveCraps">
-        <label for="idActiveCraps">Dados Activos</label>
-        <button class="roundButton" id="idRoundButton">
-          <label for="idRoundButton">Iniciar Ronda</label>
-        </button>
-      </div>
-      <p>Puntaje</p>
+      <div class="activeCraps" id="idActiveCraps"></div>
       <div class="crapsScore" id="idCrapsScore">
         <div class="roundBoard" id="idRoundBoard">
           <label for="idRoundBoard">Round</label>

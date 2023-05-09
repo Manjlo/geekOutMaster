@@ -10,14 +10,58 @@ body {
     margin: 0;
     font-family: 'gameshow', sans-serif;
 }
-p {
+/*labels*/
+#idActiveCrapsLabel {
     position: absolute;
-    font-family: 'gameshow', sans-serif;
-    color: white;
-    top: 49%;
-    left: 71%;
-    font-size: 45px;
     z-index: 1;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    display:block;
+    height: 100%;
+    height: 5%;
+    top: 48%;
+    left: 20%;
+}
+#idUsedCrapsLabel {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    display:block;
+    height: 100%;
+    height: 5%;
+    top: 5%;
+    left: 20%;
+}
+#idInactiveCrapsLabel {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    display:block;
+    height: 100%;
+    height: 5%;
+    top: 5%;
+    left: 70%;
+}
+#idScoreCrapsLabel {
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    display:block;
+    height: 100%;
+    height: 5%;
+    top: 48%;
+    left: 72%;
 }
 /*Secciones de juego*/
 .root {
@@ -45,10 +89,6 @@ p {
     border-color: #081D6D;
     border-radius: 15px;
     margin: 20px;
-    text-align: center;
-    font-size: 45px;
-    font-weight: bold;
-    color: white;
 }
 .root .inactiveCraps {  
     width: calc(40% - 10px);
@@ -74,19 +114,6 @@ p {
     width: calc(53% - 10px);
     background-image: none;
     background-size: cover;
-}
-#idActiveCraps {
-    position: relative;
-    margin: 20px;
-    text-align: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    display: grid;
-    height: 100%;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: repeat(2, 1fr);
-    height: 80%;
 }
 .root .crapsScore {  
     display: flex;
@@ -141,27 +168,26 @@ p {
     font-family: 'Karma Future', sans-serif;
 }
 /*Boton de ronda*/
-.root .activeCraps .roundButton {
-    height: 22%;
-    width: 40%;
+.welcomeWindow .window-content .roundButton {
+    height:11%;
+    width: 15%;
 }
 #idRoundButton {
-    position: relative;
-    top: 76%;
-    left: 0%;
-    transform: translateX(-50%);
+    position: absolute;
+    top: 45.5%;
+    left: 41.9%;
     padding: 10px 20px;
-    background-image: url("assets/inactiveCraps.jpg");
     background-size: cover;
     border-radius: 15px;
     border-width: 3px;
-    border-style: solid;
-    border-color: #081D6D;
+    border-color: none;
+    background-color: black;
     color: white;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
     cursor: pointer;
-    font-family: 'Karma Future', sans-serif;
+    box-shadow: 2px 5px 5px 6px #8807d7;
+    font-family: 'Gameshow', sans-serif;
 }
 
 .crap img{
@@ -202,3 +228,27 @@ p {
     display: flex;
     justify-content: space-around;
 }
+/*pantalla de bienvenida*/
+.welcomeWindown {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.57);
+}
+  .windown-content {
+    height: 10%;
+    background-color: none;
+    margin: auto;
+    border: none;
+    border-radius: 15px;
+    width: 20%;
+    margin-top: 22.7%;
+}
+/*tarjet de informarcion*/
+
+
