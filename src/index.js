@@ -1,3 +1,3 @@
-import initGameController from './controller/index.js';
+import GameController from "./controller/GameController.js";
 
-initGameController();
+const gameController = new GameController();

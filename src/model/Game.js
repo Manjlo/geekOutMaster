@@ -15,16 +15,28 @@ class PlayState {
   setIsActiveAction(isActiveAction) {
     this.isActiveAction = isActiveAction;
   }
+
   getIsActiveAction() {
     return this.isActiveAction;
   }
+
   setActiveAction(activeAction) {
     this.activeAction = activeAction;
   }
-  
+
   setActiveRound(activeRound) {
     this.activeRound = activeRound;
   }
+
+  setState(state) {
+    this.player = state.player
+    this.rounds = state.rounds
+    this.activeRound = state.activeRound
+    this.score = state.score
+    this.isActiveAction = state.isActiveAction
+    this.activeAction = state.activeAction
+  }
+
 }
 
 class Game {
@@ -35,6 +47,10 @@ class Game {
 
   getState() {
     return this.playState;
+  }
+
+  setState(state) {
+    this.playState.setState(state);
   }
 
   calculateWin() {
@@ -70,6 +86,7 @@ class Game {
       if (this.playState.activeRound === this.playState.rounds.length - 1) {
         this.calculateWin();
       } else {
+        this.playState.activeRound.setIsPlayed()
         this.playState.setActiveRound(this.playState.rounds[activeRound + 1]);
       }
     } else if (activeCraps.length === 1 && activeCraps[0].action !== DONT_POINT) {

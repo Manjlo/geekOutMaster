@@ -1,7 +1,6 @@
-import audioDice from "../assets/sounds/dice.mp3";
 
 class Crap{
-    constructor(sides, id){
+    constructor(sides, id, audioDice){
       this.sides = sides;
       this.id = id;
       this.audio = new Audio(audioDice)
@@ -19,6 +18,10 @@ class Crap{
   roll() {
     this.currentSide = this.sides[Math.floor(Math.random() * this.sides.length)];
     return this.currentSide;
+  }
+
+  activeCrap () {
+    return this.currentSide.executeAction();
   }
 
   turnOff() {
