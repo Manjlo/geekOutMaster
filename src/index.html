@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8">
-    <script type="module" src="index.js"></script>
-    <link rel="stylesheet" href="index.css">
-    <title>Geek out master</title>
-  </head>
-  <body>
-    <div class="root" id="root">
-      <div class = "usedCraps" id="idUsedCraps">
+
+<head>
+  <meta charset="UTF-8">
+  <script type="module" src="index.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <title>Geek out master</title>
+</head>
+
+<body>
+  <div class="root" id="root">
+    <div class="container-section">
+      <div class="usedCraps" id="idUsedCraps">
         <label for="idUsedCraps">Dados Usados</label>
       </div>
-      <div class = "inactiveCraps" id="idInactiveCraps">
+      <div class="inactiveCraps" id="idInactiveCraps">
         <label for="idInactiveCraps">Dados Inactivos</label>
       </div>
-      <div class = "activeCraps" id="idActiveCraps">
+    </div>
+    <div class="container-section">
+      <div class="activeCraps" id="idActiveCraps">
         <label for="idActiveCraps">Dados Activos</label>
         <button class="roundButton" id="idRoundButton">
           <label for="idRoundButton">Iniciar Ronda</label>
         </button>
       </div>
       <p>Puntaje</p>
-      <div class = "crapsScore" id="idCrapsScore">
+      <div class="crapsScore" id="idCrapsScore">
         <div class="roundBoard" id="idRoundBoard">
           <label for="idRoundBoard">Round</label>
         </div>
@@ -30,5 +35,8 @@
         </div>
       </div>
     </div>
-  </body>
+
+  </div>
+</body>
+
 </html>

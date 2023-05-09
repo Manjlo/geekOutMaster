@@ -7,6 +7,7 @@
     src: url('assets/Gameshow.ttf');
 }
 body {
+    margin: 0;
     font-family: 'gameshow', sans-serif;
 }
 p {
@@ -20,12 +21,13 @@ p {
 }
 /*Secciones de juego*/
 .root {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: stretch;
-    background-image: url("assets/activeCraps.jpg");
+    background-image: url("assets/madera.png");
 }
 #root {
     border-style:none;
@@ -33,8 +35,8 @@ p {
 }
 .root .usedCraps {  
     width: calc(53% - 10px);
-    background-image: url("assets/usedCraps.jpg");
-    background-size: cover;
+    background-image: url("assets/galaxy-background.jpeg");
+    background-size:cover;
 }
 #idUsedCraps {
     position: relative;
@@ -50,7 +52,7 @@ p {
 }
 .root .inactiveCraps {  
     width: calc(40% - 10px);
-    background-image: url("assets/inactiveCraps.jpg");
+    background-image: url("assets/galaxy-background.jpeg");
     background-size: cover;
 }
 #idInactiveCraps {
@@ -64,6 +66,9 @@ p {
     font-size: 45px;
     font-weight: bold;
     color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
 .root .activeCraps {  
     width: calc(53% - 10px);
@@ -77,11 +82,16 @@ p {
     font-size: 40px;
     font-weight: bold;
     color: white;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 80%;
 }
 .root .crapsScore {  
     display: flex;
     width: calc(40% - 10px);
-    background-image: url("assets/score.jpg");
+    background-image: url("assets/galaxy-background.jpeg");
     background-size: cover;
 }
 #idCrapsScore {
@@ -154,3 +164,41 @@ p {
     font-family: 'Karma Future', sans-serif;
 }
 
+.crap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    max-width: 140px;
+    max-height: 140px;
+    margin: 10;
+}
+
+.crapContainer{
+    max-width: 156px;
+    max-height: 169px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crap:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.crap {
+    margin: 10px;
+}
+
+.container-section {
+    display: flex;
+    width: 100%;
+    height: calc(100vh/2);
+    display: flex;
+    justify-content: space-around;
+}
