@@ -76,7 +76,10 @@ class Game {
       this.calculateWin();
     }
 
-    const noMoreActivatesCraps = activeCraps.every(crap => !crap.currentSide.isActionable);
+    const noMoreActivatesCraps = activeCraps.every(
+      crap => !crap.currentSide.isActionable
+    );
+
     if (noMoreActivatesCraps) {
       this.calculateScore();
     }
