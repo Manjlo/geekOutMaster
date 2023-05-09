@@ -1,8 +1,12 @@
+import audioDice from "../assets/sounds/dice.mp3";
+
 class Crap{
     constructor(sides, id){
       this.sides = sides;
       this.id = id;
-      this.currentSide = this.sides[0];
+      this.audio = new Audio(audioDice)
+      //currentSide aleatorio
+      this.currentSide = this.sides[Math.floor(Math.random() * this.sides.length)];
     }
   getCurrentSide() {
     return this.currentSide;
@@ -22,6 +26,9 @@ class Crap{
     this.currentSide = this.sides.find(side => side.color == this.currentSide.color && side != this.currentSide);
   }
 
+  playSound() {
+    this.audio.play();
+  }
 
 }
 

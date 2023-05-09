@@ -10,17 +10,17 @@ class Round {
     this.inactiveCraps = [];
     this.puntajeCraps = [];
 
-    for (let i = 0; i < 3; i++) {
+
+    //init 7 aleatory craps
+    for (let i = 0; i < 7; i++) {
       const randomIndex = Math.floor(Math.random() * initialCraps.length);
       const randomDie = initialCraps[randomIndex];
       this.activeCraps.push(randomDie);
       initialCraps.splice(randomIndex, 1);
     }
-    for (let i = 0; i < 10; i++) {
-      const randomIndex = Math.floor(Math.random() * initialCraps.length);
-      const randomDie = initialCraps[randomIndex];
-      this.inactiveCraps.push(randomDie);
-      initialCraps.splice(randomIndex, 1);
+    //init 3 aleatory craps
+    for (let i = 0; i < initialCraps.length; i++) {
+      this.inactiveCraps.push(initialCraps[i]);
     }
 
     this.puntajeCraps = [];
