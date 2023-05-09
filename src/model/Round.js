@@ -2,13 +2,13 @@ import Score from './Score.js';
 
 class Round {
   constructor(roundNumber, initialCraps) {
-    console.log(initialCraps);
     this.roundNumber = roundNumber;
     this.score = new Score();
     this.usedCraps = [];
     this.activeCraps = [];
     this.inactiveCraps = [];
     this.puntajeCraps = [];
+    this.played = false;
 
 
     //init 7 aleatory craps
@@ -26,7 +26,9 @@ class Round {
     this.puntajeCraps = [];
     this.isCurrentRound = true;
   }
-
+  setIsPlayed(){
+    this.played = true;
+  }
   getRoundNumber() {
     return this.roundNumber;
   }
@@ -87,6 +89,34 @@ class Round {
 
   setActiveRound() {
     this.isCurrentRound = true;
+  }
+
+  turnOffCrap(crap) {
+    crap.turnOff();
+  }
+
+  useCrap(crap) {
+    this.moveCrapFromActiveToUsed(crap);
+    return crap.activeCrap()
+  }
+
+  deleteCrap(crap) {
+    this.moveCrapFromActiveToInactive(crap);
+  }
+
+  rollAgain(crap) {
+    crap.roll();
+  }
+
+  rollFromInactive(crap) {
+    this.moveCrapFromInactiveToActive(crap);
+    crap.roll();
+  }
+
+  rollCraps() {
+    this.activeCraps.forEach(crap => {
+      crap.roll();
+    })
   }
 
 }

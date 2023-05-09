@@ -11,9 +11,10 @@ class Side {
     return this.name;
   }
   
-  executeAction(playState) {
-    playState.isActiveAction = true;
-    playState.setActiveAtion(this.action);
+  executeAction() {
+    return [true, this.action]
+    //playState.setIsActiveAction = true;
+    //playState.setActiveAtion(this.action);
   }
 
 }
