@@ -1,0 +1,103 @@
+/*.scene {
+    width: 50px;
+    height: 50px;
+    perspective: 600px;
+  }
+  
+  .cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+  }
+  
+  .cube div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .front {
+    transform: translateZ(25px);
+  }
+  
+  .back {
+    transform: rotateY(180deg) translateZ(25px);
+  }
+  
+  .right {
+    transform: rotateY(90deg) translateZ(25px);
+  }
+  
+  .left {
+    transform: rotateY(-90deg) translateZ(25px);
+  }
+  
+  .top {
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  
+  .bottom {
+    transform: rotateX(-90deg) translateZ(25px);
+  }
+  
+  .cube.show-front {
+    animation-name: show-front;
+    animation-duration: 1s;
+  }
+  
+  @keyframes show-front {
+      from {transform: rotateX(0deg) rotateY(0deg);}
+      to {transform: rotateX(0deg) rotateY(0deg);}
+  }
+  
+  .cube.show-back {
+      animation-name: show-back;
+      animation-duration: 1s;
+  }
+  
+  @keyframes show-back {
+      from {transform: rotateX(0deg) rotateY(0deg);}
+      to {transform: rotateX(0deg) rotateY(-180deg);}
+  }
+  
+  .cube.show-right {
+      animation-name: show-right;
+      animation-duration: 1s;
+  }
+  
+  @keyframes show-right {
+      from {transform: rotateX(0deg) rotateY(0deg);}
+      to {transform: rotateX(0deg) rotateY(-90deg);}
+  }
+  
+  .cube.show-left {
+      animation-name: show-left;
+      animation-duration: 1s;
+  }
+  
+  @keyframes show-left {
+      from {transform: rotateX(0deg) rotateY(0deg);}
+      to {transform: rotateX(0deg) rotateY(90deg);}
+  }
+  
+  .cube.show-top {
+      animation-name: show-top;
+      animation-duration: 1s;
+  }
+  
+  @keyframes show-top {
+      from {transform: rotateX(0deg) rotateY(0deg);}
+      to {transform: rotateX(-90deg) rotateY(0deg);}
+  }
+  
+  .cube.show-bottom {
+      animation-name: show-bottom;
+      animation-duration: 1s;
+  }
+  
+  @keyframes show-bottom {
+      from {transform: rotateX(0deg) rotateY(0deg);}
+      to {transform: rotateX(90deg) rotateY(0deg);}
+  }
+*/

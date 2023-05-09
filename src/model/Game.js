@@ -21,7 +21,7 @@ class PlayState {
   setActiveAction(activeAction) {
     this.activeAction = activeAction;
   }
-  
+
   setActiveRound(activeRound) {
     this.activeRound = activeRound;
   }

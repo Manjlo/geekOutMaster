@@ -14,7 +14,7 @@ import { YELLOW, BLUE, RED, GREEN } from "../utils/colors.js";
 
 
 
-//define sides for the crapsa
+//define sides for the craps
 const Meeple = new Side("Meeple", YELLOW, "Mepple" , ROLL_DICE_AGAIN, true);
 const SpaceCraft = new Side("SpaceCraft", YELLOW, "Cohete", DELETE_DICE, true);
 const SuperHero = new Side("SuperHero", YELLOW, "Superheroe", TURN_OFF_DICE, true);
