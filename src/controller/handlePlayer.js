@@ -4,7 +4,7 @@ import { NUMBER_OF_PLAYERS } from "../utils/GameConstans.js";
 function createInitialPlayers(playerNames) {
   if (NUMBER_OF_PLAYERS.length > 1) {
     const players = [];
-    for (let i = 0; i < numberOfPlayers; i++) {
+    for (let i = 0; i < NUMBER_OF_PLAYERS; i++) {
       players.push(new Player(`Player ${playerNames[i]}`));
     }
 

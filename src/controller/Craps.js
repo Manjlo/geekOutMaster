@@ -7,6 +7,7 @@ import {ROLL_DICE_AGAIN, ROLL_DICE_FROM_INACTIVE, DELETE_DICE, DONT_POINT, POINT
 
 //import colors
 import { YELLOW, BLUE, RED, GREEN } from "../utils/colors.js";
+import { NUMBER_OF_CRAPS } from "../utils/GameConstans.js";
 
 //import Avatars
 
@@ -15,18 +16,18 @@ import { YELLOW, BLUE, RED, GREEN } from "../utils/colors.js";
 
 
 //define sides for the crapsa
-const Meeple = new Side("Meeple", YELLOW, "Mepple" , ROLL_DICE_AGAIN, true);
-const SpaceCraft = new Side("SpaceCraft", YELLOW, "Cohete", DELETE_DICE, true);
+const Meeple = new Side("Meeple", GREEN, "Mepple" , ROLL_DICE_AGAIN, true);
+const SpaceCraft = new Side("SpaceCraft", GREEN, "Cohete", DELETE_DICE, true);
 const SuperHero = new Side("SuperHero", YELLOW, "Superheroe", TURN_OFF_DICE, true);
-const Heart = new Side("Heart", YELLOW, "Corazon",  ROLL_DICE_FROM_INACTIVE , true);
+const Heart = new Side("Heart", RED, "Corazon",  ROLL_DICE_FROM_INACTIVE , true);
 const Dragon = new Side("Dragon", YELLOW, "Dragon", DELETE_DICE, false);
-const Point42 = new Side("Point42", YELLOW, "42", POINT, false);
+const Point42 = new Side("Point42", RED, "42", POINT, false);
 
 
 //define craps
-function createInitialCraps(numberOfCraps) {
+function createInitialCraps() {
 const craps = [];
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < NUMBER_OF_CRAPS ; i++) {
   craps.push(new Crap([Meeple, SpaceCraft, SuperHero, Heart, Dragon, Point42], i));
 }
   console.log(craps);
