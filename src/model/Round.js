@@ -10,18 +10,18 @@ class Round {
     this.puntajeCraps = [];
     this.played = false;
 
-
     //init 7 aleatory craps
+
     for (let i = 0; i < 7; i++) {
-      const randomIndex = Math.floor(Math.random() * initialCraps.length);
-      const randomDie = initialCraps[randomIndex];
+      const randomDie = initialCraps[i];
       this.activeCraps.push(randomDie);
-      initialCraps.splice(randomIndex, 1);
+
+      //initialCraps.splice(randomIndex, 1);
     }
-    //init 3 aleatory craps
-    for (let i = 0; i < initialCraps.length; i++) {
-      this.inactiveCraps.push(initialCraps[i]);
-    }
+    console.log(this.activeCraps, "activeCraps");
+    let inactiveCrapsFiltered = initialCraps.filter(crap => !this.activeCraps.some(crapActive => crapActive.id === crap.id));
+    console.log(inactiveCrapsFiltered, "inactiveCrapsFiltered");
+    this.inactiveCraps = inactiveCrapsFiltered;
 
     this.puntajeCraps = [];
     this.isCurrentRound = true;
@@ -35,6 +35,9 @@ class Round {
 
   setActiveCraps(activeCraps) {
     this.activeCraps = activeCraps;
+  }
+  getActiveCraps() {
+    return this.activeCraps;
   }
 
   addActiveCraps(crap) {

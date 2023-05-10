@@ -1,5 +1,5 @@
 import Score from "./Score.js";
-import { DONT_POINT } from "../utils/actionTypes.js";
+import { DONT_POINT, POINT } from "../utils/actionTypes.js";
 import { NUMBER_OF_POINTS_TO_WIN } from "../utils/GameConstans.js";
 import { POINTS_TABLE } from "../utils/GameConstans.js";
 
@@ -63,19 +63,20 @@ class Game {
   }
 
   calculateScore() {
+    console.log(this.playState, "calculateScore");
+    const activeCraps = this.playState.activeRound.getActiveCraps();
+    const hasLosingCraps = !activeCraps.every(crap => crap.currentSide.action === POINT);
 
-    const activeRound = this.playState.activeRound;
-    const losingCraps = activeRound.activeCraps.filter(crap => crap.action === DONT_POINT);
-
-    if (losingCraps.length > 0) {
+    if (hasLosingCraps) {
       this.playState.activeRound.score.setScore(0);
       this.playState.score.setScore(0);
-    } else {
-      const score = this.pointsTable[activeRound.activeCraps.length];
-      this.playState.activeRound.score.addScore(score);
-      this.playState.score.addScore(score);
+    } else if (!hasLosingCraps) {
+      const score = this.pointsTable[this.playState.activeRound.getActiveCraps.length];
+      this.playState.activeRound.score.setScore(score);
+      this.playState.score.setScore(this.playState.score.getScore() + score);
     }
-
+    this.nextRound();
+    
   }
 
   checkGameState() {
@@ -83,26 +84,43 @@ class Game {
     const activeCraps = activeRound.activeCraps;
 
     if (activeCraps.length === 0) {
-      if (this.playState.activeRound === this.playState.rounds.length - 1) {
-        this.calculateWin();
-      } else {
-        this.playState.activeRound.setIsPlayed()
-        this.playState.setActiveRound(this.playState.rounds[activeRound + 1]);
+      this.nextRound();
+
+    } else if (activeCraps.length === 1) {
+      const onlyOneActiveCrap = activeCraps[0];
+      if (onlyOneActiveCrap.currentSide.isActionable) {
+        this.calculateScore();
       }
-    } else if (activeCraps.length === 1 && activeCraps[0].action !== DONT_POINT) {
+    }
+    else {
+      const noMoreActivatesCraps = activeCraps.every(
+        crap => !crap.currentSide.isActionable
+      );
+      if (noMoreActivatesCraps) {
+        this.calculateScore();
+      }
+
+    }
+
+  }
+  nextRound() {
+
+    console.log(this.playState, "nextRound");
+    const numberRound = this.playState.activeRound.roundNumber;
+    const roundLength = this.playState.rounds.length;
+    if (numberRound === roundLength - 1) {
       this.calculateWin();
     }
-
-    const noMoreActivatesCraps = activeCraps.every(
-      crap => !crap.currentSide.isActionable
-    );
-
-    if (noMoreActivatesCraps) {
-      this.calculateScore();
+    else {
+      this.playState.activeRound.setIsPlayed();
+      this.playState.setActiveRound(this.playState.rounds[numberRound + 1]);
     }
 
-    return this.playState;
+    console.log(this.playState, "nextRound1");
   }
+
+
+
 }
 
 export default Game;

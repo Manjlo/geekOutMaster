@@ -98,11 +98,11 @@ class GameController {
 
     // Actualizar la vista de la puntuación
     const score = this.game.getState().score;
-    this.scoreContainer.innerHTML = `Puntuación: ${score}`;
+    this.scoreContainer.innerHTML = `Puntuación: ${score.getScore()}`;
 
     // Actualizar la vista del tablero de la ronda
     const round = this.game.getState().activeRound;
-    this.roundContainer.innerHTML = `Ronda ${round.id} / ${NUMBER_OF_ROUNDS}`;
+    this.roundContainer.innerHTML = `Ronda ${round.roundNumber+1} / ${NUMBER_OF_ROUNDS}`;
 
     // Deshabilitar el botón de lanzamiento de dados si la ronda actual ya fue jugada
     if (round.played) {
@@ -129,14 +129,14 @@ class GameController {
           this.showAlert(`Dado ${crap.id} lanzado nuevamente`);
           break;
         case ROLL_DICE_FROM_INACTIVE:
-          activeRound.rollFromInactive(inactiveCrap);
+          activeRound.rollFromInactive(crap);
           this.showAlert(`Dado ${crap.id} lanzado nuevamente desde zona inactiva`);
           break;
 
         default:
           break;
       }
-      this.game.playState.setActiveAction(false)
+      this.game.playState.setIsActiveAction(false)
     } else {
       const currentSide = crap.currentSide;
       if (!(currentSide.action === POINT || currentSide.action === DONT_POINT)) {
@@ -151,7 +151,6 @@ class GameController {
       }
 
     }
-    this.game.checkGameState();
 
     console.log(this.game.getState());
     // Actualizar la vista
@@ -167,6 +166,7 @@ class GameController {
     // Actualizar la vista
     this.updateView();
 
+    this.game.checkGameState();
     // Verificar si la ronda actual ya fue jugada
     if (activeRound.played) {
       // Obtener la puntuación de la ronda y agregarla al jugador actual

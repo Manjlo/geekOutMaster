@@ -89,6 +89,10 @@ body {
     border-color: #081D6D;
     border-radius: 15px;
     margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 80%;
 }
 .root .inactiveCraps {  
     width: calc(40% - 10px);

@@ -12,13 +12,7 @@ import { createRounds } from "./handleRound.js";
 import { createInitialPlayers } from "./handlePlayer.js";
 
 
-function newAlert(message) {
-  windowAlert.innerHTML = message;
-  windowAlert.style.display = 'block';
-}
 
-function initGameController() {
-  // Obtener el div contenedor donde se insertarán los dados
   const activeCrapsContainer = document.getElementById('idActiveCraps');
   const inactiveCrapsContainer = document.getElementById('idInactiveCraps');
   const useCrapsContainer = document.getElementById('idUsedCraps');
@@ -27,6 +21,13 @@ function initGameController() {
   const scoreContainer = document.getElementById('idRoundScore');
   const roundContainer = document.getElementById('idRoundBoard');
 
+function newAlert(message) {
+  windowAlert.innerHTML = message;
+  windowAlert.style.display = 'block';
+}
+
+function initGameController() {
+  // Obtener el div contenedor donde se insertarán los dados
 
   //GAME OBJECTS
   const initialCraps = createInitialCraps(NUMBER_OF_CRAPS);
@@ -157,5 +158,3 @@ function initGameController() {
 }
 
 initGameController();
-
-export default initGameController;

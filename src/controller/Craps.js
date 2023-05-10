@@ -15,18 +15,12 @@ import { NUMBER_OF_CRAPS } from "../utils/GameConstans.js";
 
 
 
-<<<<<<< HEAD
-//define sides for the craps
-const Meeple = new Side("Meeple", YELLOW, "Mepple" , ROLL_DICE_AGAIN, true);
-const SpaceCraft = new Side("SpaceCraft", YELLOW, "Cohete", DELETE_DICE, true);
-=======
 //define sides for the crapsa
 const Meeple = new Side("Meeple", GREEN, "Mepple" , ROLL_DICE_AGAIN, true);
 const SpaceCraft = new Side("SpaceCraft", GREEN, "Cohete", DELETE_DICE, true);
->>>>>>> dc23210f49cf5e590ae717b81e4c2504ca7f6387
 const SuperHero = new Side("SuperHero", YELLOW, "Superheroe", TURN_OFF_DICE, true);
 const Heart = new Side("Heart", RED, "Corazon",  ROLL_DICE_FROM_INACTIVE , true);
-const Dragon = new Side("Dragon", YELLOW, "Dragon", DELETE_DICE, false);
+const Dragon = new Side("Dragon", YELLOW, "Dragon", DONT_POINT, false);
 const Point42 = new Side("Point42", RED, "42", POINT, false);
 
 
