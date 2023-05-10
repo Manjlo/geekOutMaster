@@ -39,9 +39,7 @@ class GameController {
       this.modal.style.display = 'none';
       this.onRollCrapsClick();
     });
-    this.modal.addEventListener('click', () => {
-      this.onRollCrapsClick();
-    });
+
 
     // Actualizar la vista inicial
     this.updateView();

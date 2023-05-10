@@ -286,8 +286,8 @@ body {
 /*Reglas*/
 .root .card .rules {
     position: absolute;
-    height: 80%;
-    width: 90%;
+    width: 650px;
+    height: 600px;
 }
 #rulesButton {
     position: absolute;
@@ -311,7 +311,6 @@ body {
     background-size: cover;
     z-index: 1;
     margin-top:13%;
-    margin-left: 3%;
 }
 #rulesLabel {
     position: absolute;
