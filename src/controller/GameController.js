@@ -100,7 +100,7 @@ class GameController {
 
 
     // Crear los elementos de los dados usados y agregarlos al contenedor correspondiente
-    const usedCrapsElements = this.game.getState().activeRound.usedCraps.map((crap) => this.createCrap(crap));
+    const usedCrapsElements = this.game.getState().activeRound.usedCraps.map((crap) => this.createCrap(crap, this.dontUseThisCraps.bind(this)));
     usedCrapsElements.forEach(crapElement => this.useCrapsContainer.appendChild(crapElement));
 
     // Actualizar la vista de la puntuación
@@ -204,6 +204,9 @@ class GameController {
 
       // Eliminar vista, crear vista de fin de juego. añadir botón de reinicio
 
+    }
+    if (this.game.getState().player.isLoser) {
+      alert(`¡El perdedor es ${this.game.getState().player.name} con ${this.game.getState().score} puntos!`);
     }
 
   }
