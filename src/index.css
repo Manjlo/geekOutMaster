@@ -34,8 +34,8 @@ body {
     display:block;
     height: 100%;
     height: 5%;
-    top: 5%;
-    left: 20%;
+    top: 1%;
+    left: 25%;
 }
 #idInactiveCrapsLabel {
     position: absolute;
@@ -47,7 +47,7 @@ body {
     display:block;
     height: 100%;
     height: 5%;
-    top: 5%;
+    top: 1%;
     left: 73%;
 }
 #idScoreCrapsLabel {
@@ -90,9 +90,10 @@ body {
     border-radius: 15px;
     margin: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 80%;
+    margin-top: 2.5%;
 }
 .root .inactiveCraps {  
     width: calc(40% - 10px);
@@ -113,11 +114,19 @@ body {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3, 1fr);
+    margin-top: 2.5%;
 }
 .root .activeCraps {  
     width: calc(53% - 10px);
     background-image: none;
     background-size: cover;
+}
+#idActiveCraps {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2, 1fr);
+    height: 80%;
 }
 .root .crapsScore {  
     display: flex;
@@ -284,7 +293,7 @@ body {
     position: absolute;
     background-color: rgb(255, 255, 255);
     z-index: 1;
-    top:3%;
+    margin-top: 4px;
     left: 2.5%;
     font-family: 'Gameshow', sans-serif;
     font-size: 25px;
