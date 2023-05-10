@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <script type="module" src="index.js"></script>
   <script type="module" src="view/modal.js"></script>
+  <script type="module" src="view/tarjet.js"></script>
   <link rel="stylesheet" href="index.css">
   <title>Geek out master</title>
 </head>
@@ -20,6 +21,11 @@
   <label id="idInactiveCrapsLabel">Dados Inactivos</label>
   <label id="idScoreCrapsLabel">Puntaje</label>
   <div class="root" id="root">
+    <button id="rulesButton">Mostrar Reglas</button>
+    <div id="myCard" class="card">
+      <label id="rulesLabel">Reglas de Juego</label>
+      <div class="rules" id="idRules"></div>
+    </div>
     <div class="container-section">
       <div class="usedCraps" id="idUsedCraps"></div>
       <div class="inactiveCraps" id="idInactiveCraps"></div>
