@@ -19,6 +19,11 @@ class GameController {
     this.scoreContainer = document.getElementById('idRoundScore');
     this.roundContainer = document.getElementById('idRoundBoard');
     this.soundRoll = document.getElementById('soundRoll');
+    this.modal = document.getElementById("idWelcome");
+
+    window.onload = function () {
+      this.modal.style.display = "block";
+    }
 
     // Crear los objetos del juego
     const initialCraps = createInitialCraps();
@@ -31,6 +36,10 @@ class GameController {
 
     // Agregar el listener de click al botón de lanzamiento de dados
     this.rollCrapsButton.addEventListener('click', () => {
+      this.modal.style.display = 'none';
+      this.onRollCrapsClick();
+    });
+    this.modal.addEventListener('click', () => {
       this.onRollCrapsClick();
     });
 
@@ -102,7 +111,7 @@ class GameController {
 
     // Actualizar la vista del tablero de la ronda
     const round = this.game.getState().activeRound;
-    this.roundContainer.innerHTML = `Ronda ${round.roundNumber+1} / ${NUMBER_OF_ROUNDS}`;
+    this.roundContainer.innerHTML = `Ronda ${round.roundNumber + 1} / ${NUMBER_OF_ROUNDS}`;
 
     // Deshabilitar el botón de lanzamiento de dados si la ronda actual ya fue jugada
     if (round.played) {
@@ -153,8 +162,20 @@ class GameController {
     }
 
     console.log(this.game.getState());
+
+    this.game.checkGameState();
+
+    //
+    if (this.game.getState().activeRound.played) {
+      alert(`Ronda jugada Terminada, Obtuviste ${this.game.getState().score} presiona el botón de siguiente ronda para continuar`)
+      this.modal.style.display = "block";
+      this.rollCrapsButton.classList.add('disabled');
+    }
+
     // Actualizar la vista
     this.updateView();
+
+
   }
 
   onRollCrapsClick() {
@@ -166,7 +187,6 @@ class GameController {
     // Actualizar la vista
     this.updateView();
 
-    this.game.checkGameState();
     // Verificar si la ronda actual ya fue jugada
     if (activeRound.played) {
       // Obtener la puntuación de la ronda y agregarla al jugador actual

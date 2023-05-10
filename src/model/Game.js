@@ -71,7 +71,7 @@ class Game {
       this.playState.activeRound.score.setScore(0);
       this.playState.score.setScore(0);
     } else if (!hasLosingCraps) {
-      const score = this.pointsTable[this.playState.activeRound.getActiveCraps.length];
+      const score = this.pointsTable[this.playState.activeRound.getActiveCraps().length];
       this.playState.activeRound.score.setScore(score);
       this.playState.score.setScore(this.playState.score.getScore() + score);
     }
