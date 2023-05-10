@@ -1,15 +1,18 @@
 @font-face {
-  font-family: 'Karma Future';
-  src: url('assets/KarmaFuture.ttf');
+    font-family: 'Karma Future';
+    src: url('assets/KarmaFuture.ttf');
 }
+
 @font-face {
     font-family: 'gameshow';
     src: url('assets/Gameshow.ttf');
 }
+
 body {
     margin: 0;
     font-family: 'gameshow', sans-serif;
 }
+
 /*labels*/
 #idActiveCrapsLabel {
     position: absolute;
@@ -18,12 +21,13 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: white;
-    display:block;
+    display: block;
     height: 100%;
     height: 5%;
     top: 50%;
     left: 20%;
 }
+
 #idUsedCrapsLabel {
     position: absolute;
     z-index: 1;
@@ -31,12 +35,13 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: white;
-    display:block;
+    display: block;
     height: 100%;
     height: 5%;
     top: 1%;
     left: 25%;
 }
+
 #idInactiveCrapsLabel {
     position: absolute;
     z-index: 1;
@@ -44,12 +49,13 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: white;
-    display:block;
+    display: block;
     height: 100%;
     height: 5%;
     top: 1%;
     left: 73%;
 }
+
 #idScoreCrapsLabel {
     position: absolute;
     z-index: 1;
@@ -57,12 +63,13 @@ body {
     font-size: 25px;
     font-weight: bold;
     color: white;
-    display:block;
+    display: block;
     height: 100%;
     height: 5%;
     top: 54%;
     left: 74%;
 }
+
 /*Secciones de juego*/
 .root {
     height: 100%;
@@ -73,15 +80,18 @@ body {
     align-items: stretch;
     background-image: url("assets/madera.png");
 }
+
 #root {
-    border-style:none;
+    border-style: none;
     border-radius: 15px;
 }
-.root .usedCraps {  
+
+.root .usedCraps {
     width: calc(53% - 10px);
     background-image: url("assets/galaxy-background.jpeg");
-    background-size:cover;
+    background-size: cover;
 }
+
 #idUsedCraps {
     position: relative;
     border-width: 5px;
@@ -90,16 +100,18 @@ body {
     border-radius: 15px;
     margin: 20px;
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 80%;
     margin-top: 2.5%;
 }
-.root .inactiveCraps {  
+
+.root .inactiveCraps {
     width: calc(40% - 10px);
     background-image: url("assets/galaxy-background.jpeg");
     background-size: cover;
 }
+
 #idInactiveCraps {
     position: relative;
     border-width: 5px;
@@ -112,28 +124,32 @@ body {
     font-weight: bold;
     color: white;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin-top: 2.5%;
 }
-.root .activeCraps {  
+
+.root .activeCraps {
     width: calc(53% - 10px);
     background-image: none;
     background-size: cover;
 }
+
 #idActiveCraps {
     margin: 20px;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     height: 80%;
 }
-.root .crapsScore {  
+
+.root .crapsScore {
     display: flex;
     width: calc(40% - 10px);
     background-image: url("assets/galaxy-background.jpeg");
     background-size: cover;
 }
+
 #idCrapsScore {
     position: relative;
     border-width: 5px;
@@ -146,11 +162,13 @@ body {
     font-weight: bold;
     color: white;
 }
+
 /*Tablero de ronda*/
 .root .crapsScore .roundBoard {
     height: 30%;
     width: 30%;
 }
+
 #idRoundBoard {
     position: relative;
     background-color: #EEE5E3;
@@ -163,11 +181,13 @@ body {
     color: black;
     font-family: 'Karma Future', sans-serif;
 }
+
 /*Taablero de puntaje*/
 .root .crapsScore .roundScore {
     height: 30%;
     width: 30%;
 }
+
 #idRoundScore {
     position: relative;
     background-color: #EEE5E3;
@@ -180,11 +200,13 @@ body {
     color: black;
     font-family: 'Karma Future', sans-serif;
 }
+
 /*Boton de ronda*/
 .welcomeWindow .window-content .roundButton {
-    height:11%;
+    height: 11%;
     width: 15%;
 }
+
 #idRoundButton {
     position: absolute;
     top: 45.5%;
@@ -203,11 +225,12 @@ body {
     font-family: 'Gameshow', sans-serif;
     transition: all 0.2s ease;
 }
+
 #idRoundButton:hover {
     transform: scale(1.5);
 }
 
-.crap img{
+.crap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -217,7 +240,7 @@ body {
     margin: 10;
 }
 
-.crapContainer{
+.crapContainer {
     max-width: 156px;
     max-height: 169px;
     padding-top: 10px;
@@ -228,7 +251,7 @@ body {
     align-items: center;
 }
 
-.crap:hover{
+.crap:hover {
     transform: scale(1.1);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -245,6 +268,7 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
 /*pantalla de bienvenida*/
 .welcomeWindown {
     display: flex;
@@ -257,7 +281,8 @@ body {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.57);
 }
-  .windown-content {
+
+.windown-content {
     height: 10%;
     background-color: none;
     margin: auto;
@@ -266,6 +291,7 @@ body {
     width: 20%;
     margin-top: 22.7%;
 }
+
 /*tarjet de informarcion*/
 .card {
     position: fixed;
@@ -280,15 +306,18 @@ body {
     padding: 20px;
     transition: all 0.5s ease;
 }
+
 .card.show {
     right: 0;
 }
+
 /*Reglas*/
 .root .card .rules {
     position: absolute;
-    width: 650px;
-    height: 600px;
+    width: calc(94%);
+    height: calc(75%);
 }
+
 #rulesButton {
     position: absolute;
     background-color: rgb(255, 255, 255);
@@ -302,16 +331,19 @@ body {
     height: 40px;
     transition: all 0.2s ease;
 }
+
 #rulesButton:hover {
     transform: scale(1.1);
 }
+
 #idRules {
     background-color: red;
     background-image: url("assets/HojaAyuda.png");
     background-size: cover;
     z-index: 1;
-    margin-top:13%;
+    margin-top: 13%;
 }
+
 #rulesLabel {
     position: absolute;
     font-size: 40px;
@@ -319,4 +351,3 @@ body {
     top: 6%;
     left: 55%;
 }
-
